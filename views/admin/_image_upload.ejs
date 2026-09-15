@@ -2,8 +2,8 @@
   <span class="field-label">Featured image</span>
   <div class="dropzone">
     <input type="file" name="image_file" accept="image/*" hidden>
-    <div class="upload-preview"><% if(item.image){ %><img src="<%= item.image %>" alt="Current image"><span>Current image</span><% } %></div>
+    <div class="upload-preview"><% if(item.image){ %><img src="<%= item.image %>" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80'" alt="Current image"><span>Current image</span><% } %></div>
     <div class="drop-copy"><strong>Drop an image here</strong><span>or</span><button type="button" class="secondary-btn" data-choose-file>Choose image</button><small>JPG, PNG, GIF, WEBP or SVG • max 8MB</small></div>
   </div>
-  <label class="url-label">Or paste an image URL<input name="image" value="<%= item.image||'' %>" placeholder="https://..."></label>
+  <label class="url-label">Or paste an image URL<input name="image" value="<%= item.image||'' %>" placeholder="https://images.unsplash.com/..."></label>
 </div>
