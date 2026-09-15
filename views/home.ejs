@@ -1,143 +1,107 @@
 <%- include('partials/header',{title:''}) %>
 <%
   const heroFallback='https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1800&q=90';
-  const heroImg=(site.hero_image && !site.hero_image.includes('placeholder')) ? site.hero_image : heroFallback;
-  const aboutImg='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=88';
+  const missionImg='https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=86';
+  const featureImg='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=86';
   const programFallbacks=[
-    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=88',
-    'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=88',
-    'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=1200&q=88'
-  ];
-  const eventFallbacks=[
-    'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=88',
-    'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=1200&q=88'
+    'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=86',
+    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=86',
+    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=86'
   ];
   const storyFallbacks=[
-    'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=88',
-    'https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1000&q=88',
-    'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1000&q=88'
+    'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=86',
+    'https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1200&q=86',
+    'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1200&q=86'
   ];
+  const heroSrc=(site.hero_image && !site.hero_image.includes('placeholder')) ? site.hero_image : heroFallback;
 %>
 
-<section class="lux-hero">
-  <div class="wrap lux-hero-grid">
-    <div class="lux-hero-copy">
-      <span class="lux-kicker"><span></span><%= site.hero_badge || 'Compassionate cancer care' %></span>
+<section class="nova-shell wrap">
+  <div class="nova-hero">
+    <div class="nova-hero-copy">
+      <span class="nova-overline"><i></i><%= site.hero_badge || 'Cancer support • Ghana' %></span>
       <h1><%= site.hero_title || 'Care today. Hope always.' %></h1>
-      <p class="lux-lead"><%= site.hero_text || 'We support people affected by cancer through awareness, early detection, practical care and survivor-centered community programs.' %></p>
-      <div class="lux-actions">
-        <a class="lux-btn lux-btn-primary" href="/donate">Donate now <span>↗</span></a>
-        <a class="lux-btn lux-btn-ghost" href="/programs">Explore programs <span>→</span></a>
+      <p><%= site.hero_text || 'We help people affected by cancer find clear information, earlier detection, practical support and a community that stands with them.' %></p>
+      <div class="nova-actions">
+        <a class="nova-btn nova-btn-primary" href="/donate">Donate now <span>↗</span></a>
+        <a class="nova-btn nova-btn-secondary" href="/programs">Explore programs <span>→</span></a>
       </div>
-      <div class="lux-meta">
-        <span>Accra, Ghana</span>
-        <span>Community-led</span>
-        <span>Survivor-centered</span>
-      </div>
+      <div class="nova-trustline"><span>●</span> Compassionate, community-led support across Ghana</div>
     </div>
+    <div class="nova-hero-media">
+      <img src="<%= heroSrc %>" onerror="this.onerror=null;this.src='<%= heroFallback %>'" alt="Cancer care and compassionate support">
+      <div class="nova-media-note"><small>Our promise</small><strong>No one should face cancer alone.</strong></div>
+    </div>
+  </div>
 
-    <div class="lux-hero-visual">
-      <img src="<%= heroImg %>" alt="Cancer support and compassionate care">
-      <div class="lux-hero-badge"><strong><%= site.stat_lives || '48K+' %></strong><span>lives reached</span></div>
-      <div class="lux-hero-caption"><span>♡</span><p>No one should face cancer alone.</p></div>
-    </div>
+  <div class="nova-metrics">
+    <div><strong><%= site.stat_lives || '48K+' %></strong><span>Lives reached</span></div>
+    <div><strong><%= site.stat_communities || '120+' %></strong><span>Communities</span></div>
+    <div><strong><%= site.stat_volunteers || '450+' %></strong><span>Volunteers</span></div>
+    <div><strong><%= site.stat_events || '32+' %></strong><span>Events & outreach</span></div>
   </div>
 </section>
 
-<section class="lux-stats wrap">
-  <div><strong><%= site.stat_lives || '48K+' %></strong><span>Lives reached</span></div>
-  <div><strong><%= site.stat_communities || '120+' %></strong><span>Communities</span></div>
-  <div><strong><%= site.stat_volunteers || '450+' %></strong><span>Volunteers</span></div>
-  <div><strong><%= site.stat_events || '32+' %></strong><span>Events & outreaches</span></div>
-</section>
-
-<section class="lux-about wrap">
-  <div class="lux-about-image"><img src="<%= aboutImg %>" alt="Community support and volunteers"></div>
-  <div class="lux-about-copy">
-    <span class="lux-section-kicker">Who we are</span>
-    <h2>Support that feels personal, practical and human.</h2>
-    <p>CSNF helps people navigate cancer with clearer information, earlier detection, compassionate support and stronger survivor communities.</p>
-    <div class="lux-checks">
-      <span>Community education</span>
-      <span>Screening & early detection</span>
-      <span>Patient & family support</span>
-      <span>Survivorship advocacy</span>
-    </div>
-    <a class="lux-text-link" href="/about">Discover our story <span>↗</span></a>
+<section class="nova-mission wrap">
+  <div class="nova-mission-copy">
+    <span class="nova-label">Who we are</span>
+    <h2>Human care, delivered with clarity and dignity.</h2>
+    <p>CSNF connects cancer awareness, early detection, patient support and survivorship. Our work is designed to make care feel closer, clearer and less overwhelming for patients and families.</p>
+    <div class="nova-checks"><span>Early detection & screening</span><span>Patient and family support</span><span>Survivorship & advocacy</span></div>
+    <a class="nova-link" href="/about">Learn about the foundation <span>↗</span></a>
+  </div>
+  <div class="nova-mission-media">
+    <img src="<%= missionImg %>" alt="Community volunteers supporting people">
+    <div class="nova-mission-caption"><b>Community first</b><span>Support that meets people where they are.</span></div>
   </div>
 </section>
 
-<section class="lux-programs">
+<section class="nova-programs">
   <div class="wrap">
-    <div class="lux-section-head">
-      <div><span class="lux-section-kicker">What we do</span><h2>Focused programs. Real impact.</h2></div>
-      <a class="lux-text-link" href="/programs">View all programs <span>→</span></a>
+    <div class="nova-heading">
+      <div><span class="nova-label">What we do</span><h2>Focused programs. Real impact.</h2></div>
+      <a class="nova-link" href="/programs">See all programs <span>→</span></a>
     </div>
-    <div class="lux-program-grid">
-      <% programs.slice(0,3).forEach((p,i)=>{ const img=(p.image && !p.image.includes('placeholder')) ? p.image : programFallbacks[i]; %>
-        <a class="lux-program-card" href="/programs/<%= p.slug %>">
-          <div class="lux-program-image"><img src="<%= img %>" alt="<%= p.title %>"><span>0<%= i+1 %></span></div>
-          <div class="lux-program-copy"><h3><%= p.title %></h3><p><%= p.excerpt %></p><b>Learn more ↗</b></div>
+    <div class="nova-program-grid">
+      <% programs.slice(0,3).forEach((p,i)=>{ const fallback=programFallbacks[i] || programFallbacks[0]; %>
+        <a class="nova-program-card" href="/programs/<%= p.slug %>">
+          <div class="nova-program-image"><img src="<%= p.image || fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt="<%= p.title %>"></div>
+          <div class="nova-program-body"><small>0<%= i+1 %></small><h3><%= p.title %></h3><p><%= p.excerpt %></p><span>Explore program ↗</span></div>
         </a>
       <% }) %>
     </div>
   </div>
 </section>
 
-<section class="lux-impact wrap">
-  <div class="lux-impact-copy">
-    <span class="lux-section-kicker lux-light">Why it matters</span>
-    <h2>Hope grows when care is within reach.</h2>
-    <p>Every screening, conversation and act of support can change the experience of someone facing cancer.</p>
-    <a class="lux-btn lux-btn-white" href="/news">See our impact <span>↗</span></a>
-  </div>
-  <div class="lux-impact-card">
-    <span class="lux-quote">“</span>
-    <p>Compassion becomes powerful when it turns into action.</p>
-    <small>Cancer Support Network Foundation</small>
+<section class="nova-feature wrap">
+  <div class="nova-feature-image"><img src="<%= featureImg %>" alt="Healthcare professional providing compassionate care"></div>
+  <div class="nova-feature-copy">
+    <span class="nova-label nova-label-light">Why it matters</span>
+    <h2>Support can change the way a cancer journey feels.</h2>
+    <p>When people have trusted information, practical help and a community around them, fear can become action and isolation can become connection.</p>
+    <div class="nova-feature-points"><span>Awareness that reduces fear</span><span>Screening that encourages earlier action</span><span>Support that protects dignity</span></div>
+    <a class="nova-btn nova-btn-white" href="/news">See our impact <span>↗</span></a>
   </div>
 </section>
 
-<section class="lux-events wrap">
-  <div class="lux-section-head">
-    <div><span class="lux-section-kicker">Events</span><h2>Community, connection and courage.</h2></div>
-    <a class="lux-text-link" href="/events">All events <span>→</span></a>
+<section class="nova-updates wrap">
+  <div class="nova-heading">
+    <div><span class="nova-label">Latest from CSNF</span><h2>Stories, events and updates.</h2></div>
+    <a class="nova-link" href="/news">View all updates <span>→</span></a>
   </div>
-  <div class="lux-event-grid">
-    <% events.slice(0,2).forEach((e,i)=>{ const img=(e.image && !e.image.includes('placeholder')) ? e.image : eventFallbacks[i]; %>
-      <a class="lux-event-card" href="/events/<%= e.slug %>">
-        <img src="<%= img %>" alt="<%= e.title %>">
-        <div class="lux-event-copy">
-          <small><%= new Date(e.event_date+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) %></small>
-          <h3><%= e.title %></h3>
-          <p><%= e.location %></p>
-          <span>View event ↗</span>
-        </div>
+  <div class="nova-update-grid">
+    <% [...stories,...news].slice(0,3).forEach((n,i)=>{ const type=n.person?'stories':'news'; const fallback=storyFallbacks[i] || storyFallbacks[0]; %>
+      <a class="nova-update-card" href="/<%= type %>/<%= n.slug %>">
+        <img src="<%= n.image || fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt="">
+        <div><small><%= n.person?'Story':'News' %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p><span>Read more ↗</span></div>
       </a>
     <% }) %>
   </div>
 </section>
 
-<section class="lux-stories">
-  <div class="wrap">
-    <div class="lux-section-head">
-      <div><span class="lux-section-kicker">Stories & updates</span><h2>Stories worth sharing.</h2></div>
-      <a class="lux-text-link" href="/stories">More stories <span>→</span></a>
-    </div>
-    <div class="lux-story-grid">
-      <% [...stories,...news].slice(0,3).forEach((n,i)=>{ const type=n.person?'stories':'news'; const img=(n.image && !n.image.includes('placeholder')) ? n.image : storyFallbacks[i]; %>
-        <a class="lux-story-card" href="/<%= type %>/<%= n.slug %>">
-          <img src="<%= img %>" alt="">
-          <div><small><%= n.person?'Story':'News' %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p><span>Read more ↗</span></div>
-        </a>
-      <% }) %>
-    </div>
-  </div>
-</section>
-
-<section class="lux-final wrap">
-  <div><span class="lux-section-kicker lux-light">Get involved</span><h2>Stand with someone today.</h2></div>
-  <div><p>Your support helps bring cancer awareness, screening and practical care closer to more people.</p><div class="lux-actions"><a class="lux-btn lux-btn-white" href="/donate">Donate now <span>↗</span></a><a class="lux-btn lux-btn-outline" href="/contact">Partner with us</a></div></div>
+<section class="nova-cta wrap">
+  <div><span class="nova-label nova-label-light">Get involved</span><h2>Be part of someone’s next chapter.</h2></div>
+  <div><p>Donate, volunteer, sponsor a screening or partner with CSNF to bring support closer to more people.</p><div class="nova-actions"><a class="nova-btn nova-btn-white" href="/donate">Support our work <span>↗</span></a><a class="nova-btn nova-btn-ghost" href="/contact">Partner with us</a></div></div>
 </section>
 
 <%- include('partials/footer') %>
