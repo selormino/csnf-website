@@ -1,107 +1,43 @@
 <%- include('partials/header',{title:''}) %>
 <%
-  const heroFallback='https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1800&q=90';
-  const missionImg='https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=86';
-  const featureImg='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=86';
-  const programFallbacks=[
-    'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=86',
-    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=86',
-    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=86'
-  ];
-  const storyFallbacks=[
-    'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=86',
-    'https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1200&q=86',
-    'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1200&q=86'
-  ];
-  const heroSrc=(site.hero_image && !site.hero_image.includes('placeholder')) ? site.hero_image : heroFallback;
+const heroFallback='https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1800&q=90';
+const aboutImage='https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=88';
+const featureImage='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=88';
+const programFallbacks=['https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=88','https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=88','https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=88'];
+const updateFallbacks=['https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=88','https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1200&q=88','https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1200&q=88'];
+const heroSrc=(site.hero_image && !String(site.hero_image).includes('placeholder'))?site.hero_image:heroFallback;
 %>
-
-<section class="nova-shell wrap">
-  <div class="nova-hero">
-    <div class="nova-hero-copy">
-      <span class="nova-overline"><i></i><%= site.hero_badge || 'Cancer support • Ghana' %></span>
-      <h1><%= site.hero_title || 'Care today. Hope always.' %></h1>
-      <p><%= site.hero_text || 'We help people affected by cancer find clear information, earlier detection, practical support and a community that stands with them.' %></p>
-      <div class="nova-actions">
-        <a class="nova-btn nova-btn-primary" href="/donate">Donate now <span>↗</span></a>
-        <a class="nova-btn nova-btn-secondary" href="/programs">Explore programs <span>→</span></a>
-      </div>
-      <div class="nova-trustline"><span>●</span> Compassionate, community-led support across Ghana</div>
-    </div>
-    <div class="nova-hero-media">
-      <img src="<%= heroSrc %>" onerror="this.onerror=null;this.src='<%= heroFallback %>'" alt="Cancer care and compassionate support">
-      <div class="nova-media-note"><small>Our promise</small><strong>No one should face cancer alone.</strong></div>
-    </div>
-  </div>
-
-  <div class="nova-metrics">
-    <div><strong><%= site.stat_lives || '48K+' %></strong><span>Lives reached</span></div>
-    <div><strong><%= site.stat_communities || '120+' %></strong><span>Communities</span></div>
-    <div><strong><%= site.stat_volunteers || '450+' %></strong><span>Volunteers</span></div>
-    <div><strong><%= site.stat_events || '32+' %></strong><span>Events & outreach</span></div>
-  </div>
-</section>
-
-<section class="nova-mission wrap">
-  <div class="nova-mission-copy">
-    <span class="nova-label">Who we are</span>
-    <h2>Human care, delivered with clarity and dignity.</h2>
-    <p>CSNF connects cancer awareness, early detection, patient support and survivorship. Our work is designed to make care feel closer, clearer and less overwhelming for patients and families.</p>
-    <div class="nova-checks"><span>Early detection & screening</span><span>Patient and family support</span><span>Survivorship & advocacy</span></div>
-    <a class="nova-link" href="/about">Learn about the foundation <span>↗</span></a>
-  </div>
-  <div class="nova-mission-media">
-    <img src="<%= missionImg %>" alt="Community volunteers supporting people">
-    <div class="nova-mission-caption"><b>Community first</b><span>Support that meets people where they are.</span></div>
-  </div>
-</section>
-
-<section class="nova-programs">
+<section class="pro-home-hero">
   <div class="wrap">
-    <div class="nova-heading">
-      <div><span class="nova-label">What we do</span><h2>Focused programs. Real impact.</h2></div>
-      <a class="nova-link" href="/programs">See all programs <span>→</span></a>
+    <div class="pro-home-grid">
+      <div class="pro-home-copy">
+        <span class="pro-eyebrow"><%= site.hero_badge || 'Cancer support • Ghana' %></span>
+        <h1><%= site.hero_title || 'Care today. Hope always.' %></h1>
+        <p><%= site.hero_text || 'We help people affected by cancer find clear information, earlier detection, practical support and a community that stands with them.' %></p>
+        <div class="pro-actions"><a class="pro-btn dark" href="/donate">Support our work ↗</a><a class="pro-btn light" href="/programs">Explore programs →</a></div>
+      </div>
+      <div class="pro-home-image"><img src="<%= heroSrc %>" onerror="this.onerror=null;this.src='<%= heroFallback %>'" alt="Compassionate support and care"><div class="pro-image-badge"><small>Our promise</small><strong>No one should face cancer alone.</strong></div></div>
     </div>
-    <div class="nova-program-grid">
-      <% programs.slice(0,3).forEach((p,i)=>{ const fallback=programFallbacks[i] || programFallbacks[0]; %>
-        <a class="nova-program-card" href="/programs/<%= p.slug %>">
-          <div class="nova-program-image"><img src="<%= p.image || fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt="<%= p.title %>"></div>
-          <div class="nova-program-body"><small>0<%= i+1 %></small><h3><%= p.title %></h3><p><%= p.excerpt %></p><span>Explore program ↗</span></div>
-        </a>
-      <% }) %>
-    </div>
+    <div class="pro-metrics"><div><strong><%= site.stat_lives || '48K+' %></strong><span>Lives reached</span></div><div><strong><%= site.stat_communities || '120+' %></strong><span>Communities</span></div><div><strong><%= site.stat_volunteers || '450+' %></strong><span>Volunteers</span></div><div><strong><%= site.stat_events || '32+' %></strong><span>Events & outreach</span></div></div>
   </div>
 </section>
 
-<section class="nova-feature wrap">
-  <div class="nova-feature-image"><img src="<%= featureImg %>" alt="Healthcare professional providing compassionate care"></div>
-  <div class="nova-feature-copy">
-    <span class="nova-label nova-label-light">Why it matters</span>
-    <h2>Support can change the way a cancer journey feels.</h2>
-    <p>When people have trusted information, practical help and a community around them, fear can become action and isolation can become connection.</p>
-    <div class="nova-feature-points"><span>Awareness that reduces fear</span><span>Screening that encourages earlier action</span><span>Support that protects dignity</span></div>
-    <a class="nova-btn nova-btn-white" href="/news">See our impact <span>↗</span></a>
-  </div>
+<section class="pro-section wrap pro-intro">
+  <div class="pro-intro-image"><img src="<%= aboutImage %>" alt="Volunteers serving their community"><div class="pro-intro-card"><b>Community first</b><span>Support designed around real people, families and communities.</span></div></div>
+  <div class="pro-intro-copy"><span class="pro-eyebrow">Who we are</span><h2>Human care, delivered with clarity and dignity.</h2><p>CSNF connects cancer awareness, early detection, patient support and survivorship. We make information easier to understand and practical support easier to reach.</p><div class="pro-points"><span>Early detection and screening</span><span>Patient and family support</span><span>Survivorship and advocacy</span></div><a class="pro-link" href="/about">Discover our story <span>↗</span></a></div>
 </section>
 
-<section class="nova-updates wrap">
-  <div class="nova-heading">
-    <div><span class="nova-label">Latest from CSNF</span><h2>Stories, events and updates.</h2></div>
-    <a class="nova-link" href="/news">View all updates <span>→</span></a>
-  </div>
-  <div class="nova-update-grid">
-    <% [...stories,...news].slice(0,3).forEach((n,i)=>{ const type=n.person?'stories':'news'; const fallback=storyFallbacks[i] || storyFallbacks[0]; %>
-      <a class="nova-update-card" href="/<%= type %>/<%= n.slug %>">
-        <img src="<%= n.image || fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt="">
-        <div><small><%= n.person?'Story':'News' %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p><span>Read more ↗</span></div>
-      </a>
-    <% }) %>
-  </div>
+<section class="pro-section soft">
+  <div class="wrap"><div class="pro-heading"><div><span class="pro-eyebrow">What we do</span><h2>Focused programs. Real impact.</h2></div><a class="pro-link" href="/programs">See all programs <span>→</span></a></div><div class="pro-card-grid">
+  <% programs.slice(0,3).forEach((p,i)=>{ const fallback=programFallbacks[i]||programFallbacks[0]; %><a class="pro-image-card" href="/programs/<%= p.slug %>"><img src="<%= p.image||fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt="<%= p.title %>"><div class="body"><small>Program 0<%= i+1 %></small><h3><%= p.title %></h3><p><%= p.excerpt %></p><b>Learn more ↗</b></div></a><% }) %>
+  </div></div>
 </section>
 
-<section class="nova-cta wrap">
-  <div><span class="nova-label nova-label-light">Get involved</span><h2>Be part of someone’s next chapter.</h2></div>
-  <div><p>Donate, volunteer, sponsor a screening or partner with CSNF to bring support closer to more people.</p><div class="nova-actions"><a class="nova-btn nova-btn-white" href="/donate">Support our work <span>↗</span></a><a class="nova-btn nova-btn-ghost" href="/contact">Partner with us</a></div></div>
-</section>
+<section class="pro-section wrap"><div class="pro-feature"><img src="<%= featureImage %>" alt="Healthcare professional supporting a patient"><div class="pro-feature-copy"><span class="pro-eyebrow">Why it matters</span><h2>Support can change the way a cancer journey feels.</h2><p>Trusted information, earlier action and compassionate support can turn uncertainty into confidence and isolation into connection.</p><div class="pro-points"><span>Awareness that reduces fear</span><span>Screening that encourages earlier action</span><span>Support that protects dignity</span></div><a class="pro-btn light" href="/news">See our impact ↗</a></div></div></section>
 
+<section class="pro-section soft"><div class="wrap"><div class="pro-heading"><div><span class="pro-eyebrow">Latest from CSNF</span><h2>Stories, news and updates.</h2></div><a class="pro-link" href="/news">View all updates <span>→</span></a></div><div class="pro-card-grid">
+<% [...stories,...news].slice(0,3).forEach((n,i)=>{ const type=n.person?'stories':'news'; const fallback=updateFallbacks[i]||updateFallbacks[0]; %><a class="pro-image-card" href="/<%= type %>/<%= n.slug %>"><img src="<%= n.image||fallback %>" onerror="this.onerror=null;this.src='<%= fallback %>'" alt=""><div class="body"><small><%= n.person?'Survivor story':'News' %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p><b>Read more ↗</b></div></a><% }) %>
+</div></div></section>
+
+<section class="pro-cta wrap"><div><span class="pro-eyebrow" style="color:#f6dce6">Get involved</span><h2>Be part of someone’s next chapter.</h2></div><div><p>Donate, volunteer, sponsor a screening or partner with CSNF to bring support closer to more people.</p><div class="pro-actions"><a class="pro-btn light" href="/donate">Donate today ↗</a><a class="pro-btn" style="border:1px solid rgba(255,255,255,.45);color:#fff" href="/contact">Partner with us</a></div></div></section>
 <%- include('partials/footer') %>
