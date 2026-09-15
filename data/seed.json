@@ -2,9 +2,9 @@
   "settings": {
     "site_name":"Cancer Support Network Foundation",
     "tagline":"Fighting Cancer Together",
-    "hero_title":"Hope is stronger when we stand together.",
-    "hero_text":"We bring cancer awareness, early screening, patient support and survivor-centered care closer to communities across Ghana.",
-    "phone":"0530462998",
+    "hero_title":"Care today. Hope always.",
+    "hero_text":"CSNF is dedicated to supporting people affected by cancer through awareness, early detection, treatment support and community care.",
+    "phone":"+233 24 446 7034",
     "email":"csnetworkgh@gmail.com",
     "address":"13 Jungle Avenue, East Legon, Accra, Ghana",
     "momo":"0530462998 — Cancer Support Network Foundation LBG",
@@ -22,7 +22,7 @@
   ],
   "events":[
     {"title":"Cancer Survivors Walk","slug":"cancer-survivors-walk","event_date":"2024-06-08","location":"Accra Girls SHS to El-Wak Sports Stadium, Accra","excerpt":"Hundreds of survivors, families, health professionals and supporters walked through Accra to celebrate resilience and promote early detection.","body":"The inaugural Cancer Survivors Walk brought together survivors, advocates, medical professionals and supporters. The event also raised awareness and supported cancer patients with treatment assistance.","image":"https://cancersupportnf.org/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-03-at-9.07.17-PM.jpeg","featured":1,"published":1},
-    {"title":"Cancer Survivors Gala","slug":"cancer-survivors-gala","event_date":"2024-06-29","location":"Accra, Ghana","excerpt":"A celebration of resilience, survivorship and hope to climax Cancer Survivors Month.","body":"Held under the theme ‘Rising Strong Beyond Cancer: A Celebration of Survivorship and Hope for All,’ the gala spotlighted survivors and mobilized support for people still fighting cancer.","image":"https://images.unsplash.com/photo-1519167758481-83f550bb49b3ac?auto=format&fit=crop&w=1600&q=85","featured":1,"published":1}
+    {"title":"Cancer Survivors Gala","slug":"cancer-survivors-gala","event_date":"2024-06-29","location":"Accra, Ghana","excerpt":"A celebration of resilience, survivorship and hope to climax Cancer Survivors Month.","body":"Held under the theme ‘Rising Strong Beyond Cancer: A Celebration of Survivorship and Hope for All,’ the gala spotlighted survivors and mobilized support for people still fighting cancer.","image":"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=85","featured":1,"published":1}
   ],
   "news":[
     {"title":"CSNF donates GH₵100,000 to support paediatric oncology care","slug":"csnf-donates-ghs100000-paediatric-oncology","published_at":"2026-06-26","excerpt":"Cancer Support Network Foundation presented a GH₵100,000 cheque and assorted consumables to the Paediatric Oncology Unit of the Greater Accra Regional Hospital.","body":"The donation formed part of CSNF’s annual Cancer Survivors Month activities and focused attention on children battling cancer and the financial pressures their families face.","image":"https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=85","featured":1,"published":1},
@@ -33,6 +33,6 @@
   ],
   "team":[
     {"name":"Dr. Juliet Appiah Quansah","role":"Founder & Board Chair","bio":"Medical oncologist/hematologist and co-founder of Cancer Support Network Foundation.","image":"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80","sort_order":1,"published":1},
-    {"name":"Akwas Osei","role":"President","bio":"Supports the foundation’s leadership, awareness and community engagement initiatives.","image":"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80","sort_order":2,"published":1}
+    {"name":"Akwasi Osei","role":"President","bio":"Supports the foundation’s leadership, awareness and community engagement initiatives.","image":"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80","sort_order":2,"published":1}
   ]
 }
