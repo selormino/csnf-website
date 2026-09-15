@@ -14,6 +14,7 @@
   <style>:root{--admin-accent:<%= site.accent_color || '#cf2e6c' %>}</style>
 </head>
 <body class="theme-<%= site.theme || 'hope' %> cards-<%= site.card_style || 'soft' %> <%= currentPath === '/' ? 'home-page' : '' %>">
+  <!-- Permanent production service: homepage updates deploy in place. -->
   <div class="topbar"><div class="wrap topbar-inner"><div class="topbar-links"><span>• Cancer awareness</span><span>• Screening</span><span>• Survivor support</span><span>• Community care</span></div><div class="topbar-contact"><span>Need help? Contact our support team today</span><a href="tel:<%= (site.phone || '').replace(/\s+/g,'') %>">☎ &nbsp;<%= site.phone %></a></div></div></div>
   <header class="site-header"><div class="wrap header-inner">
     <a class="brand" href="/"><% if(site.logo_image){ %><img class="brand-logo" src="<%= site.logo_image %>" alt="<%= site.site_name %> logo"><% } else { %><span class="logo-mark" aria-hidden="true"><span class="logo-dot"></span><span class="logo-stem"></span><span class="logo-arm left"></span><span class="logo-arm right"></span></span><% } %><span class="brand-copy"><strong><%= site.site_name %></strong><small><%= site.tagline || 'Together, we can overcome' %></small></span></a>
