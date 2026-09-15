@@ -3,21 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Cancer Support Network Foundation — awareness, screening, support and survivorship across Ghana.">
+  <meta name="description" content="Cancer Support Network Foundation — cancer awareness, screening, patient support and survivorship across Ghana.">
   <title><%= title ? title + ' | ' : '' %><%= site.site_name %></title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/themes.css">
-  <link rel="stylesheet" href="/css/editorial-home.css">
-  <style>:root{--admin-accent:<%= site.accent_color || '#cf2e6c' %>}</style>
+  <link rel="stylesheet" href="/css/site-pro.css">
+  <style>:root{--admin-accent:<%= site.accent_color || '#c63d6d' %>}</style>
 </head>
-<body class="theme-<%= site.theme || 'hope' %> cards-<%= site.card_style || 'soft' %> <%= currentPath === '/' ? 'home-page' : '' %>">
-  <div class="topbar"><div class="wrap topbar-inner"><div class="topbar-links"><span>• Cancer awareness</span><span>• Screening</span><span>• Survivor support</span><span>• Community care</span></div><div class="topbar-contact"><span>Need help? Contact our support team today</span><a href="tel:<%= (site.phone || '').replace(/\s+/g,'') %>">☎ &nbsp;<%= site.phone %></a></div></div></div>
-  <header class="site-header"><div class="wrap header-inner">
-    <a class="brand" href="/"><% if(site.logo_image){ %><img class="brand-logo" src="<%= site.logo_image %>" alt="<%= site.site_name %> logo"><% } else { %><span class="logo-mark" aria-hidden="true"><span class="logo-dot"></span><span class="logo-stem"></span><span class="logo-arm left"></span><span class="logo-arm right"></span></span><% } %><span class="brand-copy"><strong><%= site.site_name %></strong><small><%= site.tagline || 'Together, we can overcome' %></small></span></a>
-    <button class="menu-btn" aria-label="Toggle menu">☰</button>
-    <nav><a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a><a class="<%= currentPath.startsWith('/about') ? 'active' : '' %>" href="/about">About</a><a class="<%= currentPath.startsWith('/programs') ? 'active' : '' %>" href="/programs">Programs</a><a class="<%= currentPath.startsWith('/events') ? 'active' : '' %>" href="/events">Events</a><a class="<%= currentPath.startsWith('/stories') ? 'active' : '' %>" href="/stories">Stories</a><a class="<%= currentPath.startsWith('/news') ? 'active' : '' %>" href="/news">News</a><a class="<%= currentPath.startsWith('/contact') ? 'active' : '' %>" href="/contact">Contact</a></nav>
-    <a class="pill header-donate" href="/donate">♡ Donate</a>
-  </div></header><main>
+<body class="pro-site theme-<%= site.theme || 'hope' %> cards-<%= site.card_style || 'soft' %> <%= currentPath === '/' ? 'home-page' : '' %>">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <% if(site.logo_image && !String(site.logo_image).includes('placeholder')){ %>
+          <img class="brand-logo" src="<%= site.logo_image %>" alt="<%= site.site_name %> logo">
+        <% } else { %>
+          <span class="logo-mark" aria-hidden="true"></span>
+        <% } %>
+        <span class="brand-copy">
+          <strong><%= site.site_name %></strong>
+          <small><%= site.tagline || 'Together, we can overcome' %></small>
+        </span>
+      </a>
+      <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav aria-label="Primary navigation">
+        <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a>
+        <a class="<%= currentPath.startsWith('/about') ? 'active' : '' %>" href="/about">About</a>
+        <a class="<%= currentPath.startsWith('/programs') ? 'active' : '' %>" href="/programs">Programs</a>
+        <a class="<%= currentPath.startsWith('/events') ? 'active' : '' %>" href="/events">Events</a>
+        <a class="<%= currentPath.startsWith('/stories') ? 'active' : '' %>" href="/stories">Stories</a>
+        <a class="<%= currentPath.startsWith('/news') ? 'active' : '' %>" href="/news">News</a>
+        <a class="<%= currentPath.startsWith('/contact') ? 'active' : '' %>" href="/contact">Contact</a>
+      </nav>
+      <a class="pill header-donate" href="/donate">Donate</a>
+    </div>
+  </header>
+  <main>
