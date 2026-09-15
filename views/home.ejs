@@ -1,30 +1,138 @@
 <%- include('partials/header',{title:''}) %>
-<section class="home-hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow"><%= site.hero_badge || 'Compassionate cancer care' %></span>
+<section class="premium-hero">
+  <div class="wrap premium-hero-grid">
+    <div class="premium-hero-copy">
+      <span class="premium-kicker"><span></span><%= site.hero_badge || 'Compassionate cancer care' %></span>
       <h1><%= site.hero_title || 'Care today. Hope always.' %></h1>
-      <p><%= site.hero_text || 'CSNF is dedicated to supporting people affected by cancer through awareness, early detection, treatment support and community care.' %></p>
-      <div class="actions"><a class="btn primary" href="/donate">♡ Donate Now</a><a class="btn ghost-dark" href="/programs">Learn Our Programs →</a></div>
-      <div class="hero-stats">
-        <div class="stat-chip"><span class="stat-icon people">◎</span><div><strong><%= site.stat_lives || '48K+' %></strong><small>Lives Reached</small></div></div>
-        <div class="stat-chip"><span class="stat-icon ribbon">◌</span><div><strong><%= site.stat_communities || '120+' %></strong><small>Communities</small></div></div>
-        <div class="stat-chip"><span class="stat-icon heart">♡</span><div><strong><%= site.stat_volunteers || '450+' %></strong><small>Volunteers</small></div></div>
-        <div class="stat-chip"><span class="stat-icon calendar">◫</span><div><strong><%= site.stat_events || '32+' %></strong><small>Events Held</small></div></div>
+      <p class="premium-lead"><%= site.hero_text || 'We bring cancer awareness, screening, patient support and survivor-centered care closer to communities across Ghana.' %></p>
+      <div class="premium-actions">
+        <a class="premium-btn premium-btn-primary" href="/donate">Support a life <span>↗</span></a>
+        <a class="premium-btn premium-btn-secondary" href="/programs">Explore our work <span>→</span></a>
+      </div>
+      <div class="premium-trust">
+        <div class="trust-avatars"><span>CS</span><span>NF</span><span>GH</span></div>
+        <p><strong>Community-powered care.</strong><br>Standing with patients, survivors and families.</p>
       </div>
     </div>
-    <div class="hero-visual"><div class="hero-image-frame"><div class="hero-image-curve"></div><img src="<%= site.hero_image || '/images/placeholder-care.svg' %>" alt="Cancer support and compassionate care"></div></div>
+
+    <div class="premium-hero-media">
+      <div class="hero-orbit hero-orbit-one"></div>
+      <div class="hero-orbit hero-orbit-two"></div>
+      <div class="premium-image-card premium-image-main">
+        <img src="<%= site.hero_image || '/images/placeholder-care.svg' %>" alt="Compassionate cancer care and support">
+        <div class="image-caption"><span>●</span> Together, we can overcome</div>
+      </div>
+      <div class="premium-mini-card mini-impact">
+        <span class="mini-label">Our focus</span>
+        <strong>Early detection.<br>Better support.</strong>
+      </div>
+      <div class="premium-mini-card mini-heart">♡</div>
+    </div>
   </div>
-  <div class="wrap pillar-grid">
-    <article class="pillar-card"><span class="pillar-icon pink">📣</span><h3>Awareness</h3><p>We educate and raise awareness to promote early detection.</p><span class="pillar-arrow">→</span></article>
-    <article class="pillar-card"><span class="pillar-icon green">⚕</span><h3>Support</h3><p>We provide emotional, financial and practical support to patients and families.</p><span class="pillar-arrow">→</span></article>
-    <article class="pillar-card"><span class="pillar-icon gold">✦</span><h3>Empower</h3><p>We empower survivors and communities to live healthier, stronger lives.</p><span class="pillar-arrow">→</span></article>
+
+  <div class="wrap premium-stats">
+    <div><strong><%= site.stat_lives || '48K+' %></strong><span>Lives reached</span></div>
+    <div><strong><%= site.stat_communities || '120+' %></strong><span>Communities</span></div>
+    <div><strong><%= site.stat_volunteers || '450+' %></strong><span>Volunteers</span></div>
+    <div><strong><%= site.stat_events || '32+' %></strong><span>Events & outreaches</span></div>
   </div>
 </section>
-<section class="intro wrap intro-polished"><div><span class="kicker">Who we are</span><h2>People first. Prevention forward. Hope always.</h2></div><div><p>CSNF is a not-for-profit cancer care initiative born out of compassion to support people affected by cancer. We work with survivors, health professionals, volunteers, communities and partners to reduce fear, encourage early detection and help families navigate the cancer journey.</p><a class="text-link" href="/about">Meet the foundation →</a></div></section>
-<section class="section wrap"><div class="section-head"><div><span class="kicker">What we do</span><h2>Programs designed around real people.</h2></div><a class="text-link" href="/programs">View all programs →</a></div><div class="card-grid"><% programs.forEach((p,i)=>{ %><a class="card program-card" href="/programs/<%= p.slug %>"><div class="card-img" style="background-image:url('<%= p.image || '/images/placeholder-community.svg' %>')"><span class="card-num">0<%= i+1 %></span></div><div class="card-body"><h3><%= p.title %></h3><p><%= p.excerpt %></p><span>Learn more →</span></div></a><% }) %></div></section>
-<section class="feature-story"><div class="feature-inner wrap"><div><span class="kicker light">Recent impact</span><h2>Care that becomes action.</h2><p>CSNF turns survivor-centered awareness into practical support for patients, families, hospitals and communities.</p><a class="btn light" href="/news">Read our latest news</a></div><div class="quote-card"><span>“</span><p>No one should face cancer alone. Every screening, every conversation and every act of support can become part of someone’s survival story.</p></div></div></section>
-<section class="section wrap"><div class="section-head"><div><span class="kicker">Upcoming & recent</span><h2>Events that bring people together.</h2></div><a class="text-link" href="/events">All events →</a></div><div class="list-cards"><% events.forEach(e=>{ %><a href="/events/<%= e.slug %>" class="event-row"><div class="datebox"><b><%= new Date(e.event_date+'T00:00:00').toLocaleDateString('en-US',{day:'2-digit'}) %></b><span><%= new Date(e.event_date+'T00:00:00').toLocaleDateString('en-US',{month:'short'}) %></span></div><div><h3><%= e.title %></h3><p><%= e.location %></p></div><span class="arrow">↗</span></a><% }) %></div></section>
-<section class="section soft"><div class="wrap"><div class="section-head"><div><span class="kicker">Stories & updates</span><h2>Hope deserves to be seen.</h2></div><a class="text-link" href="/stories">More stories →</a></div><div class="news-grid"><% [...stories,...news].slice(0,3).forEach((n)=>{ const type=n.person?'stories':'news'; %><a class="news-card" href="/<%= type %>/<%= n.slug %>"><img src="<%= n.image || '/images/placeholder-community.svg' %>" alt=""><div><small><%= n.person?'Story':'News' %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p></div></a><% }) %></div></div></section>
-<section class="cta wrap"><div><span class="kicker light">Make an impact</span><h2>Your support can become someone’s next chance.</h2></div><div><p>Donate, volunteer, sponsor a screening, invite CSNF to your community or partner with us on a program.</p><a class="btn light" href="/donate">Give today</a></div></section>
+
+<section class="premium-intro wrap">
+  <div class="intro-label"><span>01</span> Why we exist</div>
+  <div class="intro-main">
+    <h2>Care that feels human.<br><em>Support that creates hope.</em></h2>
+    <p>CSNF supports people affected by cancer through practical care, education, early detection, survivor advocacy and community partnerships. We believe access to clear information and compassionate support can change a cancer journey.</p>
+    <a class="premium-text-link" href="/about">Discover our story <span>↗</span></a>
+  </div>
+</section>
+
+<section class="premium-values">
+  <div class="wrap">
+    <div class="premium-section-head">
+      <div><span class="section-index">02</span><p>What guides us</p></div>
+      <h2>From awareness<br>to action.</h2>
+    </div>
+    <div class="value-grid">
+      <article class="value-card value-pink"><span class="value-number">01</span><div class="value-icon">◉</div><h3>Awareness</h3><p>Clear, culturally relevant cancer education that replaces fear with knowledge.</p></article>
+      <article class="value-card value-green"><span class="value-number">02</span><div class="value-icon">✚</div><h3>Support</h3><p>Practical, emotional and financial support for patients and the people who care for them.</p></article>
+      <article class="value-card value-gold"><span class="value-number">03</span><div class="value-icon">✦</div><h3>Empower</h3><p>Survivor-centered programs that strengthen voices, confidence and community.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="premium-programs wrap">
+  <div class="premium-section-head program-head">
+    <div><span class="section-index">03</span><p>Our programs</p></div>
+    <h2>Designed around<br>real people.</h2>
+    <a class="premium-text-link" href="/programs">View all programs <span>→</span></a>
+  </div>
+  <div class="premium-program-grid">
+    <% programs.forEach((p,i)=>{ %>
+      <a class="premium-program-card <%= i===0 ? 'program-featured' : '' %>" href="/programs/<%= p.slug %>">
+        <img src="<%= p.image || '/images/placeholder-community.svg' %>" alt="<%= p.title %>">
+        <div class="program-shade"></div>
+        <div class="program-content"><span>0<%= i+1 %></span><h3><%= p.title %></h3><p><%= p.excerpt %></p><b>Explore ↗</b></div>
+      </a>
+    <% }) %>
+  </div>
+</section>
+
+<section class="premium-impact">
+  <div class="wrap premium-impact-grid">
+    <div class="impact-copy">
+      <span class="premium-kicker light"><span></span>Impact in motion</span>
+      <h2>Every action can become part of someone’s survival story.</h2>
+      <p>From screening outreach and survivor gatherings to hospital support and public education, our work turns compassion into measurable community impact.</p>
+      <a class="premium-btn premium-btn-light" href="/news">See our latest impact <span>↗</span></a>
+    </div>
+    <div class="impact-quote">
+      <span class="quote-mark">“</span>
+      <p>No one should have to face cancer alone.</p>
+      <small>Cancer Support Network Foundation</small>
+    </div>
+  </div>
+</section>
+
+<section class="premium-events wrap">
+  <div class="premium-section-head event-head">
+    <div><span class="section-index">04</span><p>Events</p></div>
+    <h2>Moments that bring<br>our community together.</h2>
+    <a class="premium-text-link" href="/events">All events <span>→</span></a>
+  </div>
+  <div class="premium-event-list">
+    <% events.forEach((e,i)=>{ %>
+      <a href="/events/<%= e.slug %>" class="premium-event-row">
+        <span class="event-index">0<%= i+1 %></span>
+        <div class="event-date"><b><%= new Date(e.event_date+'T00:00:00').toLocaleDateString('en-US',{day:'2-digit'}) %></b><span><%= new Date(e.event_date+'T00:00:00').toLocaleDateString('en-US',{month:'short',year:'numeric'}) %></span></div>
+        <div class="event-copy"><h3><%= e.title %></h3><p><%= e.location %></p></div>
+        <span class="event-arrow">↗</span>
+      </a>
+    <% }) %>
+  </div>
+</section>
+
+<section class="premium-stories">
+  <div class="wrap">
+    <div class="premium-section-head stories-head">
+      <div><span class="section-index">05</span><p>Stories & updates</p></div>
+      <h2>Hope deserves<br>to be seen.</h2>
+      <a class="premium-text-link" href="/stories">More stories <span>→</span></a>
+    </div>
+    <div class="premium-story-grid">
+      <% [...stories,...news].slice(0,3).forEach((n,i)=>{ const type=n.person?'stories':'news'; %>
+        <a class="premium-story-card" href="/<%= type %>/<%= n.slug %>">
+          <div class="story-image"><img src="<%= n.image || '/images/placeholder-community.svg' %>" alt=""><span><%= n.person?'Story':'News' %></span></div>
+          <div class="story-copy"><small>0<%= i+1 %></small><h3><%= n.title %></h3><p><%= n.excerpt %></p><b>Read story ↗</b></div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="premium-final-cta wrap">
+  <div class="cta-orb"></div>
+  <div><span class="premium-kicker light"><span></span>Stand with someone today</span><h2>Your support can become someone’s next chance.</h2></div>
+  <div><p>Donate, volunteer, sponsor a screening, invite CSNF into your community or partner with us on a program.</p><div class="premium-actions"><a class="premium-btn premium-btn-light" href="/donate">Donate now <span>↗</span></a><a class="premium-btn premium-btn-outline-light" href="/contact">Partner with us</a></div></div>
+</section>
 <%- include('partials/footer') %>
